@@ -6,7 +6,7 @@ Also known as "salt-and-pepper noise" or "impulse noise" filter
 # Example code
 This is a pseudo-code showing how one can use this library
 ```c
-#define FILTER_NODES_COUNT 11 // WARNING!!! ONLY ODD COUNT!
+#define FILTER_NODES_COUNT 11 // WARNING!!! ONLY ODD VALUES!
 median_filter_u16_t filter;
 median_node_u16_t nodes[FILTER_NODES_COUNT];
 
@@ -15,7 +15,7 @@ uint16_t ADC_value_filtered;
 
 int main(void){
     // initialize filter with zeros values as default (0.0f)
-    median_init_u16( &filter, nodes, FILTER_NODES_COUNT, 0.0f );
+    median_init_u16(&filter, nodes, FILTER_NODES_COUNT, 0.0f);
 
     while(1){
         ADC_value = ADC_Get_Value();
@@ -27,8 +27,6 @@ int main(void){
     return 0;
 }
 ```
-
-You can change width of filter window by initialize filter with another parameters. Buffer must be equal, or greater, than filter width
 
 Function ```median_insert_X()``` insert new value and return filtered, while function ```median_get_X()``` only return filtred value without update filter.
 

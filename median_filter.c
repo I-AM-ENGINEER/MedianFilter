@@ -7,6 +7,7 @@
  *      Author: I_AM_ENGINEER
  */
 
+#include <stddef.h>
 #include "median_filter.h"
 
 /******************************* int32 ****************************************/
